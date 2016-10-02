@@ -1,10 +1,11 @@
 var express = require('express'); 
 var path = require('path');
-var User = require('../db/index').models.User;
+var User = require('./db/index').models.User;
 var app = express(); 
 
 module.exports = app; 
 
+app.use(require('body-parser').json());
 app.use(require('express-session')({ secret: process.env.SECRET}));
 app.use('/browser', express.static(path.join(__dirname, 'browser')));
 app.use(express.static(path.join(__dirname, 'node_modules'))); 
@@ -20,8 +21,7 @@ app.use(function(req,res,next){
 		})
 		.catch(next);
 	}
-
-})
+});
 
 app.use('/api/users', require('./routes/user.js'));
 app.use('/api/groups', require('./routes/group.js'));
