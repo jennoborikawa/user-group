@@ -3,15 +3,16 @@ angular.module('app')
 		$stateProvider
 			.state('home', {
 				url: '/', 
-				template: 'HOME'
+				templateUrl: '/browser/templates/home.html'
 			})
 			.state('settings', {
 				url: '/settings', 
-				template: 'x' 
+				templateUrl: '/browser/templates/settings.html' 
 
 			})
 			.state('login', {
 				url: '/login',
-				template: 'x'
+				templateUrl: '/browser/templates/login.html', 
+				controller: 'AuthCtrl'
 			})
-	})
+	}); 

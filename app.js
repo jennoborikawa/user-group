@@ -1,6 +1,8 @@
 var express = require('express'); 
 var path = require('path');
+
 var User = require('./db/index').models.User;
+
 var app = express(); 
 
 module.exports = app; 
@@ -29,5 +31,6 @@ app.use('/api/sessions', require('./routes/sessions.js'));
 
 app.get('/', function(req, res, next){
 	res.sendFile(path.join(__dirname, 'browser/index.html'));
+	
 }); 
 
