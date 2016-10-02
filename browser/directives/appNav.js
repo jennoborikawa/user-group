@@ -7,6 +7,13 @@ angular.module('app')
   });
 
 
+
+
+
+
+
+
+
 //templateUrl: browser/templates/ 
 
 // index.html in templates nav tabs iwth sref='state'

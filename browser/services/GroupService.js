@@ -1,14 +1,14 @@
-angular.module('app')
-	.factory('GroupService', function($http){
-		var _groups = {}; 
+// angular.module('app')
+// 	.factory('GroupService', function($http){
+// 		var _groups = {}; 
 
-		return {
+// 		return {
 
-			groups: _groups, 
+// 			groups: _groups, 
 
-			findAll: function(){
+// 			findAll: function(){
 				
-			}
+// 			}
 
-		}
-	})
+// 		}
+// 	})

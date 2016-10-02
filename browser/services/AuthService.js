@@ -1,24 +1,45 @@
 angular.module('app')
-	.factory('AuthService', function($q){
+	.factory('AuthService', function($http){
 		var _user = {}; 
 
 		return {
 
 			user: _user, 
 
-			login: function(){
-				console.log('login running')
-				var dfd = $q.defer(); 
-				angular.copy({id:3, username: 'mgreen'}, _user); 
-				console.log(_user); 
-				dfd.resolve(); 
-				return dfd.promise
+			login: function(user){
+				console.log(user); 
+				return $http.post('/api/sessions', user)
+				.then(function(result){
+					angular.copy(result.data, _user); 
+					return _user; 
+				})
+				.catch(function(err){
+					console.log(err)
+				})
+
 			}, 
+
 			logout: function(){
-				var dfd = $q.defer(); 
-				angular.copy({}, _user); 
-				dfd.resolve(); 
-				return dfd.promise; 
+				return $http.delete('/api/sessions')
+				.then(function(){
+					angular.copy({}, _user); 
+					return _user; 
+				})
+				.catch(function(err){
+					console.log(err); 
+				})
+			}, 
+
+			getUser: function(){
+				return _user; 
+				
+				// return $http.get('/api/sessions')
+				// .then(function(user){
+				// 	return _user; 
+				// })
+				// .catch(function(err){
+				// 	console.log(err); 
+				// })
 			}
 		}; 
 	})

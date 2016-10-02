@@ -4,10 +4,11 @@ var models = require('../db/index').models;
 module.exports = router;
 
 router.post('/',function(req,res,next){
+	console.log(req.body.user); 
 	models.User.findOne({
 		where:{
-			username: req.body.username,
-			password: req.body.password
+			username: req.body.user.username,
+			password: req.body.user.password
 		}
 	})
 	.then(function(user){
