@@ -6,8 +6,8 @@ module.exports = router;
 router.post('/',function(req,res,next){
 	models.User.findOne({
 		where: {
-			username: res.body.credentials.username,
-			password: res.body.credentials.password
+			username: req.body.username,
+			password: req.body.password
 		}
 	})
 	.then(function(user){
