@@ -12,6 +12,7 @@ angular.module('app')
 			})
 			.state('login', {
 				url: '/login',
-				templateUrl: '/browser/templates/login.html'
+				templateUrl: '/browser/templates/login.html', 
+				controller: 'AuthCtrl'
 			})
 	}); 

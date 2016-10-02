@@ -1,7 +1,8 @@
 angular.module('app')
   .directive('appNav', function(){
     return {
-      templateUrl: 'browser/templates/navtabs.html'
+      templateUrl: 'browser/templates/navtabs.html', 
+      controller: 'AuthCtrl'
     };
   });
 
