@@ -6,7 +6,11 @@
   "scripts": {
     "test:dev": "DATABASE_URL=postgres://localhost/auth_db SYNC=true nodemon ./node_modules/mocha/bin/mocha",
     "start": "node server.js",
+<<<<<<< HEAD
     "start:dev": "DATABASE_URL=postgres://localhost/auth_db nodemon server.js"
+=======
+    "start:dev": "SECRET=Secret DATABASE_URL=postgres://localhost/auth_db nodemon server.js"
+>>>>>>> 5f69e522a01cf64ffa7bf081d3318f411edcd5ce
   },
   "repository": {
     "type": "git",
@@ -24,6 +28,7 @@
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
     "express": "^4.14.0",
+    "express-session": "^1.14.1",
     "pg": "^6.1.0",
     "sequelize": "^3.24.3"
   },

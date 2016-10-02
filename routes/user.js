@@ -23,4 +23,8 @@ router.put('/:id', function(req,res,next){
 		res.sendStatus(200);
 	})
 	.catch(next);
+<<<<<<< HEAD
 })
+=======
+});
+>>>>>>> 5f69e522a01cf64ffa7bf081d3318f411edcd5ce

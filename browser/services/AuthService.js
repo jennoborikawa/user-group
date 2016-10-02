@@ -3,9 +3,13 @@ angular.module('app')
 		var _user = {}; 
 
 		return {
+
+			user: _user, 
+
 			login: function(){
+				console.log('login running')
 				var dfd = $q.defer(); 
-				angular.copy({id:3}, _user); 
+				angular.copy({id:3, username: 'mgreen'}, _user); 
 				console.log(_user); 
 				dfd.resolve(); 
 				return dfd.promise
